@@ -4,7 +4,7 @@ $(function ($) {
         sgtTableElement = $('#student-table'),
         firebaseRef = new Firebase("https://sizzling-torch-4347.firebaseio.com/Students");
 
-    // Click handler to submit student information
+    // Click Handler to take in the values of student's info
     submitBtn.click(function () {
         var studentName = $('#s-name-input').val(),
             studentCourse = $('#s-course-input').val(),
@@ -19,7 +19,7 @@ $(function ($) {
         clearInputs();
     });
 
-    // Read operations
+    // Read operations from the database
     firebaseRef.on("child_added", function (studentSnapShot) {
         updateDOM(studentSnapShot);
     }, function (errorObject) {
@@ -32,7 +32,7 @@ $(function ($) {
         console.log("The read failed: " + errorObject.code);
     });
 
-    // Upadate and Edit
+    // Update student info as well as Edit modals
     sgtTableElement.on('click', '.edit-btn', function () {
         var student_id = $(this).data('id');
         var studentFirebaseRef = firebaseRef.child(student_id);
@@ -64,8 +64,8 @@ $(function ($) {
     }
 
 
-    //modal confirm btn
-    $("#edit-modal").on('click', '#confirm-edit', function () {
+    // Confirm edit button
+       $("#edit-modal").on('click', '#confirm-edit', function () {
         console.log("im here");
         console.log("('#edit-modal').find('#student-id').val() :", $('#edit-modal').find('#student-id').val());
         var studentFirebaseRef = firebaseRef.child($('#edit-modal').find('#student-id').val());
