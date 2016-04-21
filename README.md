@@ -7,4 +7,6 @@ Student Grade Table
 * Served as a good intro to Firebase and it's built in CRUD operations.
 * Live Demo http://www.markjurkiewicz.com/StudentGradeTable/
 
+
 ![screen shot of grade table](/images/sgt.png?raw=true "screenshot of grade table")
+
