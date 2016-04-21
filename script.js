@@ -2,7 +2,7 @@ $(function ($) {
 
     var submitBtn = $('#add-student-btn'),
         sgtTableElement = $('#student-table'),
-        firebaseRef = new Firebase("https://dazzling-fire-2876.firebaseio.com/");
+        firebaseRef = new Firebase("https://sizzling-torch-4347.firebaseio.com/Students");
 
     // Click handler to submit student information
     submitBtn.click(function () {
